@@ -42,7 +42,7 @@
 
       Lista de nomes ativos:
       <ul id="lista"></ul>
-      <span>Total salários: R$ </span>
+      <span id="total">Total salários: R$ </span>
 
     </div>
   </div>
@@ -52,6 +52,7 @@
   <br/>
   <script>
     //Insira seu código aqui
+    lista = $('#lista')
     var dados = [
       { nome: 'Thiago', ativo: true, salario: 300},
       { nome: 'Pedro', ativo: true, salario: 1500 },
@@ -59,6 +60,15 @@
       { nome: 'Jonatas', ativo: true, salario: 600},
       { nome: 'Alejandro', ativo: false, salario: 900}
     ]
+    var salario = 0
+    var i
+    for(i = 0; i < dados.length; i++){
+      if(dados[i].ativo === true){
+        lista.html(lista.html() + "<li>" + dados[i].nome + "</li>")
+        salario += dados[i].salario
+      }
+    }
+    $('#total').text('Total salários: R$' + salario)
 
   </script>
 </body>
