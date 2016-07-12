@@ -57,6 +57,11 @@
       { nome: 'Jonatas'},
       { nome: 'Alejandro'}
     ]
+    var lista = $('#lista')
+    var i
+    for(i = 0; i < dados.length; i++){
+      lista.html(lista.html() + '<li>' + dados[i].nome + '</li>')
+    }
 
   </script>
 </body>

@@ -6,26 +6,26 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
   <script src="https://code.jquery.com/jquery-3.0.0.js" integrity="sha256-jrPLZ+8vDxt2FnE1zvZXCkCcebI/C8Dt5xyaQBjxQIo=" crossorigin="anonymous"></script>
   <style>
-    .container {
-      margin-top: 30px;
-    }
+  .container {
+    margin-top: 30px;
+  }
 
-    .prev {
-      position: absolute;
-      bottom: 10px;
-      left: 10px;
-    }
+  .prev {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+  }
 
-    .next {
-      position: absolute;
-      bottom: 10px;
-      right: 10px;
-    }
+  .next {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+  }
 
-    #lista {
-      padding: 20px;
-      margin: 20px;
-    }
+  #lista {
+    padding: 20px;
+    margin: 20px;
+  }
 
 
   </style>
@@ -38,23 +38,31 @@
     <div class="jumbotron">
       <p>Manipulando o DOM</p>
       <p>O botão adicionar item, deve adicionar um novo elemento na lista id="lista" com qualquer texto</p>
-      <p>O botão remover item, deve adicionar um novo elemento na lista id="lista" com qualquer texto</p>
+      <p>O botão remover item, deve remover um novo elemento na lista id="lista" com qualquer texto</p>
 
       <ul id="lista">
         <li>Sou um elemento</li>
       </ul>
-      
-      <a class="btn btn-success">Adicionar</a>
-      <a class="btn btn-danger">Remover</a>
+
+      <a class="btn btn-success" id="add">Adicionar</a>
+      <a class="btn btn-danger" id="rm">Remover</a>
 
     </div>
+    <p class="next"><a class="btn btn-primary btn-lg" href="9.1.html" role="button">Próximo Exercício</a></p>
   </div>
   <br/>
   <br/>
   <br/>
   <br/>
   <script>
-    //Insira seu código aqui
+  var lista = $('#lista')
+  $('#add').click(function(){
+    var html = lista.html()
+    lista.html(html + '<li>Outro elemento</li>')
+  })
+  $('#rm').click(function(){
+    $('#lista li:last').remove()
+  })
   </script>
 </body>
 

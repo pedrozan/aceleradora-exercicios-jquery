@@ -51,6 +51,11 @@
   <script>
     //Insira seu código aqui
     var nomes = ['Thiago', 'Pedro', 'Eduardo', 'Jonatas', 'Alejandro']
+    var lista = $('#lista')
+    var i
+    for(i = 0; i < nomes.length; i++){
+      lista.html(lista.html() + '<li>' + nomes[i] + '</li>')
+    }
 
   </script>
 </body>

@@ -44,7 +44,7 @@
         <li>Sou um elemento</li>
       </ul>
 
-      <a class="btn btn-success">Adicionar</a>
+      <a class="btn btn-success" id="add">Adicionar</a>
 
     </div>
   </div>
@@ -53,8 +53,15 @@
   <br/>
   <br/>
   <script>
-    //Insira seu código aqui
-    
+    var lista = $('#lista')
+    var count = 0
+    $('#add').click(function(){
+      var html = lista.html()
+      var button = '<div class="col-md-offset-2 btn btn-primary btn-xs" onclick="document.getElementById(' + count + ').remove()">Remove</div>'
+      lista.html(html + '<li id="' + count + '">Outro elemento ' + count + button + '</li>')
+      count++
+    })
+
   </script>
 </body>
 
